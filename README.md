@@ -34,3 +34,6 @@ To use zsh you need to install [oh-my-posh](https://github.com/jandedobbeleer/oh
 
 ### Tmux
 @TODO
+
+### Neovim
+Install Neovim >= 0.9.0
