@@ -1,3 +1,5 @@
+# Uncomment for startuptime profiling
+# zmodload zsh/zprof
 # Set directory for zinit and plugins
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -98,3 +100,11 @@ path+=('/home/lukas/.android-sdk/tools/')
 path+=('/home/lukas/.android-sdk/tools/bin/')
 path+=('/home/lukas/flutter/bin/')
 
+
+# export NVM_DIR="$HOME/.nvm"
+#     [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+#     [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# Uncomment for startuptime profiling
+# zmodload zsh/zprof
+# zprof
