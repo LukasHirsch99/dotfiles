@@ -79,7 +79,7 @@ alias td='tmux detach'
 alias tl="tmux list-sessions"
 alias py='python'
 alias ags='AGS_SKIP_V_CHECK=true ags'
-alias nvconf='nvim ~/.config/nvim/lua/custom/chadrc.lua'
+alias nv='nvim .'
 alias c="clear"
 alias e="exit"
 # alias ssh="kitty +kitten ssh"
