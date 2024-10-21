@@ -21,7 +21,6 @@ return {
       end
     end, { silent = true })
 
-
     ls.add_snippets("lua", {
       s("hello", {
         t('print("'),
