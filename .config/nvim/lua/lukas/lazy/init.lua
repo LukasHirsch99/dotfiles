@@ -1,9 +1,9 @@
 return {
-    {
-        "nvim-lua/plenary.nvim",
-        name = "plenary"
-    },
+  {
+    "nvim-lua/plenary.nvim",
+    name = "plenary"
+  },
 
-    { 'nvim-treesitter/playground' },
-    { "christoomey/vim-tmux-navigator" }
+  { 'nvim-treesitter/playground' },
+  { "christoomey/vim-tmux-navigator" }
 }
