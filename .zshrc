@@ -1,45 +1,42 @@
-# Uncomment for startuptime profiling
-# zmodload zsh/zprof
-# Set directory for zinit and plugins
-
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Download Zinit, if not installed
-if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-# Source and load Zinit
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
+
+# Load the pure theme, with zsh-async library that's bundled with it.
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
+# Pure
+PURE_CMD_MAX_EXEC_TIME=10
+zstyle :prompt:pure:path color green
+zstyle ':prompt:pure:prompt:*' color cyan
+zstyle :prompt:pure:git:stash show yes
+
+# Plugins
+zinit wait lucid for \
+  zsh-users/zsh-syntax-highlighting \
+  zsh-users/zsh-completions \
+  Aloxaf/fzf-tab
+
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+# Snippets
+# zinit snippet OMZP::git
+# zinit snippet OMZP::sudo
+# zinit snippet OMZP::archlinux
+# zinit snippet OMZP::command-not-found
+#
+autoload -U compinit promptinit
+compinit
 
 # Use ANSI-color
 export TERM=xterm-256color
 export EDITOR="nvim"
 
-# Use oh-my-posh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.toml)"
-fi
-
-# Zinit plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
-
-# Load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
 # Keybindings
-# bindkey '^f' autosuggest-accept
+bindkey '^f' autosuggest-accept
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -84,7 +81,7 @@ alias c="clear"
 alias e="exit"
 # alias ssh="kitty +kitten ssh"
 # PS1='[\u@\h \W]\$ '
-PS1='[%2d] $ '
+# PS1='[%2d] $ '
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -99,12 +96,3 @@ path+=('/home/lukas/.android-sdk/platform-tools/')
 path+=('/home/lukas/.android-sdk/tools/')
 path+=('/home/lukas/.android-sdk/tools/bin/')
 path+=('/home/lukas/flutter/bin/')
-
-
-# export NVM_DIR="$HOME/.nvm"
-#     [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-#     [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-
-# Uncomment for startuptime profiling
-# zmodload zsh/zprof
-# zprof
