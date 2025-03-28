@@ -13,6 +13,12 @@ zstyle :prompt:pure:path color green
 zstyle ':prompt:pure:prompt:*' color cyan
 zstyle :prompt:pure:git:stash show yes
 
+# Ctrl - Arrowkey jumps
+bindkey "$terminfo[kRIT5]" forward-word
+bindkey "$terminfo[kLFT5]" backward-word
+bindkey "^[[1;3C" end-of-line
+bindkey "^[[1;3D" beginning-of-line
+
 # Plugins
 zinit wait lucid for \
   zsh-users/zsh-syntax-highlighting \
@@ -27,7 +33,7 @@ zinit light zsh-users/zsh-autosuggestions
 # zinit snippet OMZP::sudo
 # zinit snippet OMZP::archlinux
 # zinit snippet OMZP::command-not-found
-#
+
 autoload -U compinit promptinit
 compinit
 

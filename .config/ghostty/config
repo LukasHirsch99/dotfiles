@@ -2,9 +2,10 @@ background-opacity = .90
 background = 15191e
 theme = catppuccin-mocha
 font-family = FiraCode Nerd Font Mono
-font-size = 16
+font-size = 15
 quit-after-last-window-closed = true
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 cursor-invert-fg-bg
+window-decoration = server
