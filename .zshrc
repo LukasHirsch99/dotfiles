@@ -14,10 +14,10 @@ zstyle ':prompt:pure:prompt:*' color cyan
 zstyle :prompt:pure:git:stash show yes
 
 # Ctrl - Arrowkey jumps
-bindkey "$terminfo[kRIT5]" forward-word
-bindkey "$terminfo[kLFT5]" backward-word
-bindkey "^[[1;3C" end-of-line
-bindkey "^[[1;3D" beginning-of-line
+# bindkey "$terminfo[kRIT5]" forward-word
+# bindkey "$terminfo[kLFT5]" backward-word
+# bindkey "^[[1;3C" end-of-line
+# bindkey "^[[1;3D" beginning-of-line
 
 # Plugins
 zinit wait lucid for \
@@ -68,10 +68,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # bun completions
-[ -s "/home/lukas/.bun/_bun" ] && source "/home/lukas/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/var/lib/snapd/snap/bin:$PATH"
+# [ -s "/home/lukas/.bun/_bun" ] && source "/home/lukas/.bun/_bun"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+# export PATH="/var/lib/snapd/snap/bin:$PATH"
 
 # Aliases
 alias ls='lsd'
@@ -85,21 +85,10 @@ alias ags='AGS_SKIP_V_CHECK=true ags'
 alias nv='nvim .'
 alias c="clear"
 alias e="exit"
-# alias ssh="kitty +kitten ssh"
-# PS1='[\u@\h \W]\$ '
-# PS1='[%2d] $ '
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# Path
-export PATH=$PATH:~/.scripts/
-export ANDROID_SDK_ROOT='/opt/homebrew/share/android-commandlinetools'
-export ANDROID_HOME='/opt/homebrew/share/android-commandlinetools'
-path+=('/opt/homebrew/anaconda3/bin')
-path+=('/home/lukas/.android-sdk/emulator/')
-path+=('/home/lukas/.android-sdk/platform-tools/')
-path+=('/home/lukas/.android-sdk/tools/')
-path+=('/home/lukas/.android-sdk/tools/bin/')
-path+=('/home/lukas/flutter/bin/')
+# Environment Variables
+set -a; source .env; set +a
