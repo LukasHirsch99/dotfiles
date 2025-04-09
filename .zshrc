@@ -95,8 +95,9 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Path
 export PATH=$PATH:~/.scripts/
-export ANDROID_SDK_ROOT='~/.android-sdk'
-export ANDROID_HOME="~/.android-sdk"
+export ANDROID_SDK_ROOT='/opt/homebrew/share/android-commandlinetools'
+export ANDROID_HOME='/opt/homebrew/share/android-commandlinetools'
+path+=('/opt/homebrew/anaconda3/bin')
 path+=('/home/lukas/.android-sdk/emulator/')
 path+=('/home/lukas/.android-sdk/platform-tools/')
 path+=('/home/lukas/.android-sdk/tools/')
