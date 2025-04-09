@@ -15,14 +15,14 @@ Ensure you have the following installed on your system
 
 First, check out the dotfiles repo tho $HOME directory using git
 
-```
+```bash
 $ git clone https://github.com/LukasHirsch99/dotfiles.git
 $ cd dotfiles
 ```
 
 then use GNU stow to create symlinks:
 
-```
+```bash
 $ stow .
 ```
 
@@ -30,6 +30,12 @@ $ stow .
 
 ### Zsh
 To use zsh you need to install [zsh] and [zoxide](https://github.com/ajeetdsouza/zoxide).
+If you wan't to set enironment variables, specify them in a $HOME/.env file.
+
+```bash
+export PATH=$PATH:~/.scripts/
+path+=('/opt/homebrew/anaconda3/bin')
+```
 
 ### Tmux
 @TODO
