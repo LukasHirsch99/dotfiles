@@ -56,11 +56,22 @@ return {
 
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+    local defaultSources = cmp.config.sources({
+      { name = 'copilot' },
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnip users.
+      { name = 'path' },
+      -- { name = 'buffer' },
+    })
+
     cmp.setup({
       preselect = 'none',
       completion = {
         completeopt = 'menu,menuone,noinsert,noselect'
       },
+
+      sources = defaultSources,
 
       snippet = {
         expand = function(args)
@@ -73,17 +84,20 @@ return {
         ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ["<C-Space>"] = cmp.mapping.complete(),
-      }),
-
-      sources = cmp.config.sources({
-        { name = 'copilot' },
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },   -- For luasnip users.
-        { name = 'ultisnips' }, -- For ultisnip users.
-        { name = 'path' },
-        -- { name = 'buffer' },
       })
     })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = "tex",
+      callback = function()
+        local sources = defaultSources
+        sources[#sources + 1] = { name = 'ultisnips', group_index = 3 }
+        cmp.setup.buffer {
+          sources = sources
+        }
+      end
+    })
+
 
     vim.diagnostic.config({
       -- update_in_insert = true,
