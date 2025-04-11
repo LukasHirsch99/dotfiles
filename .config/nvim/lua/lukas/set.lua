@@ -29,6 +29,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.showmode = false
+
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 vim.api.nvim_create_autocmd({ "FileType" }, {

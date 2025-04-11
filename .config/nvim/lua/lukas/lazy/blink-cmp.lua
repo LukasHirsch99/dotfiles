@@ -1,5 +1,4 @@
 return {
-
   'saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
   dependencies = { 'rafamadriz/friendly-snippets' },
@@ -41,9 +40,16 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      documentation = { auto_show = false },
+      documentation = {
+        auto_show = false,
+        window = {
+          border = "rounded"
+        }
+      },
 
       menu = {
+        border = "rounded",
+        scrollbar = true,
         draw = {
           treesitter = { 'lsp' }
         }
