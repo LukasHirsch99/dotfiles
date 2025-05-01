@@ -91,4 +91,6 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Environment Variables
-set -a; source .env; set +a
+if [ -f .env ]; then
+  set -a; source .env; set +a
+fi
