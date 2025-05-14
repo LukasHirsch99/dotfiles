@@ -9,3 +9,4 @@ font-feature = -liga
 font-feature = -dlig
 cursor-invert-fg-bg
 window-decoration = server
+macos-option-as-alt = false
