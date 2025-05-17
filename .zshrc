@@ -3,6 +3,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+export MANPAGER='nvim +Man!'
+
 # Load the pure theme, with zsh-async library that's bundled with it.
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
