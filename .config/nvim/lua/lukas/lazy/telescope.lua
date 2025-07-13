@@ -23,7 +23,11 @@ return {
     map('<leader>fk', builtin.keymaps, "[F]ind [k]eymaps")
     map('<leader>fd', builtin.diagnostics, "[F]ind workspace [d]iagnostics")
 
-    map('<leader>ps', builtin.live_grep, "Grep in current project directory")
+    map('<leader>ps', function()
+      builtin.live_grep({
+        glob_pattern = "!**/node_modules"
+      })
+    end, "Grep in current project directory")
 
     map('<leader>fw', function()
       local word = vim.fn.expand("<cword>")
