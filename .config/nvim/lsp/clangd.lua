@@ -1,15 +1,13 @@
 return {
   cmd = {
-    "typescript-language-server", "--stdio",
+    "clangd", "--clang-tidy"
   },
   filetypes = {
-    "typescript",
-    "javascript",
-    "typescriptreact",
-    "javascriptreact"
+    "c", "cpp",
   },
   root_markers = {
-    ".git"
+    ".git",
+    "justfile"
   },
   -- settings = {
   --     Lua = {
