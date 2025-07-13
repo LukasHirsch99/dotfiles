@@ -1,5 +1,5 @@
-background-opacity = .90
-background = 15191e
+background-opacity = 1
+background = 11111b
 theme = catppuccin-mocha
 font-family = FiraCode Nerd Font Mono
 font-size = 15
