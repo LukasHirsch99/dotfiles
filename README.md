@@ -9,6 +9,8 @@ This repo contains the dotfiles for macos and linux
 Ensure you have the following installed on your system
 
 - git
+- fzf
+- zoxide
 - stow
 
 ## Installation
@@ -38,10 +40,15 @@ path+=('/opt/homebrew/anaconda3/bin')
 ```
 
 ### Tmux
-@TODO
+Install tpm (tmux plugin manager)
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
+
+Hit `prefix` + `I` in tmux to install all plugins
 
 ### Neovim
-Install Neovim >= 0.9.0
+Install Neovim >= 0.11.0
 
 ### Ghostty
 Install ghostty terminal
