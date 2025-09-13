@@ -76,16 +76,23 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-shift-0 = 'move-node-to-workspace 10'
 
     alt-shift-c = 'reload-config'
-
     alt-r = 'mode resize'
+
+[[on-window-detected]]
+  if.app-id = 'com.mitchellh.ghostty'
+  run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
     if.app-id = 'app.zen-browser.zen'
     run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
-    if.app-id = 'com.mitchellh.ghostty'
-    run = ['move-node-to-workspace 1']
+  if.app-id = 'notion.id'
+  run = ['move-node-to-workspace 3']
+
+[[on-window-detected]]
+  if.app-id = 'com.cron.electron'
+  run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
