@@ -1,6 +1,6 @@
 background-opacity = 1
 background = 11111b
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 font-family = FiraCode Nerd Font Mono
 font-size = 15
 quit-after-last-window-closed = true
