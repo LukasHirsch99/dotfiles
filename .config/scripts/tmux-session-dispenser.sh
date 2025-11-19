@@ -2,6 +2,7 @@
 
 DIRS=(
     "$HOME/projects"
+    "$HOME/TU-Wien/3. Semester"
     "$HOME/ObsidianVault"
 )
 
