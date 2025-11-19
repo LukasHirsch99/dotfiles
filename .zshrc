@@ -46,6 +46,7 @@ alias ags='AGS_SKIP_V_CHECK=true ags'
 alias nv='nvim .'
 alias c="clear"
 alias e="exit"
+alias spot="~/.config/scripts/ncspot.sh"
 
 source <(fzf --zsh)
 
